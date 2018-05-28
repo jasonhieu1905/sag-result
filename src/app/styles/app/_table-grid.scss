@@ -11,11 +11,7 @@
                 background-color: $gray-50;
             }
         }
-        &:not(:last-child) {
-            [class*=col-] {
-                border-bottom: 1px solid $border-color;
-            }
-        }
+
     }
     [class*=col-] {
         padding: $spacers-md 0;
@@ -28,7 +24,7 @@
             }
         }
     }
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
         .row {
             &:first-child {
                 position: absolute;
