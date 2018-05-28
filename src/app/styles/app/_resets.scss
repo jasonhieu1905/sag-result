@@ -1,0 +1,32 @@
+:invalid {
+    @include box-shadow(none);
+}
+
+:-moz-submit-invalid {
+    @include box-shadow(none);
+}
+
+:-moz-ui-invalid {
+    @include box-shadow(none);
+}
+
+* {
+    box-sizing: border-box;
+    &:active,
+    &:hover,
+    &:focus {
+        outline: 0;
+    }
+}
+
+html,
+body {
+    font-size: $font-size;
+    height: 100%;
+}
+
+.full-height {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+}

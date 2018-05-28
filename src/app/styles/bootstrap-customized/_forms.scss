@@ -1,0 +1,18 @@
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+.form-control {
+    &::-webkit-input-placeholder {
+        color: $input-color-placeholder;
+    }
+    &:-moz-placeholder {
+        color: $input-color-placeholder;
+    }
+    &:-ms-input-placeholder {
+        color: $input-color-placeholder;
+    }
+    &::placeholder {
+        color: $input-color-placeholder;
+    }
+}

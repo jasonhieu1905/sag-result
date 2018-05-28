@@ -1,0 +1,56 @@
+<form class="form">
+    <div class="form__body">
+        <ng-container *ngIf="!isLoadding">
+            <section *ngIf="totalTweets; else noTweetsFound" class="card">
+                <div class="card-body pb-0 pt-0">
+                    <div class="table-grid">
+                        <div class="row">
+                            <div class="col col-4 text-left">
+                                {{ 'Name' | translate }}
+                            </div>
+                            <div class="col col-4 text-center">
+                                {{ 'Date' | translate }}
+                            </div>
+                            <div class="col col-4 text-center">
+                                Add to basket
+                            </div>
+                        </div>
+                        <div *ngFor="let tweet of tweets; let i = index">
+                            <div *ngIf=" i == 0 || i % 5 == 0; else showTable" class="row">
+                                <div class="col col-12 text-left" style="border-bottom: none">
+                                    <h3>Category child {{i/5+1}}</h3>
+                                </div>
+                            </div>
+                            <ng-template #showTable>
+                                <div class="row" >
+                                    <div class="col col-12 col-lg-4" [attr.data-title]="'Name' | translate">
+                                        {{ tweet.name | shorten }}
+                                    </div>
+                                    <div class="col col-12 col-lg-4" [attr.data-title]="'avaialbility' | translate">
+                                        <i [class]="tweet.isLoaded ? 'fa fa-info' : 'fa fa-spinner fa-spin'" aria-hidden="true"></i>
+                                        <span *ngIf="tweet.isLoaded">
+                                            {{ tweet.availability | date:'shortDate' }} - {{ tweet.availability | date:'shortTime' }}
+                                        </span>
+                                    </div>
+                                    <div class="col col-12 col-lg-4" [attr.data-title]="'avaialbility' | translate">
+                                        <button>Add to basket</button>
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <div class="row" id="btn{{(i+1) / 5 }}" *ngIf="(i+1) % 5 == 0"  style="width: 100%">
+                                <div class="col col-12 text-center" style="border-bottom: none">
+                                    <button  [disabled]="!tweet.isLoaded" (click)="showMore($event.target, (i+1) / 5)">Mehr anzeigen</button>
+                                </div>
+                            </div>
+                            <ng-container *ngIf="(i+1) % 5 == 0">
+                                <tweet-show-more [requestAvail]="showMoreBatch[(i+1) / 5]" id="showmore{{(i+1) / 5}}" style="width: 100%; display: none"></tweet-show-more>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </ng-container>
+        <div class="spinner" [hidden]="!isLoadding"></div>
+    </div>
+</form>

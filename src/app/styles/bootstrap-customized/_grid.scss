@@ -1,0 +1,12 @@
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+.container {
+    @include media-breakpoint-down(lg) {
+        max-width: 100%;
+    }
+    @include media-breakpoint-down(md) {
+        padding: 0;
+    }
+}

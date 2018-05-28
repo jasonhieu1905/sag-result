@@ -1,0 +1,15 @@
+
+ <div class="row" *ngFor="let tweet of tweetsCustom">
+    <div class="col col-12 col-lg-4" [attr.data-title]="'Name' | translate">
+        {{ tweet.name | shorten }}
+    </div>
+    <div class="col col-12 col-lg-4" [attr.data-title]="'avaialbility' | translate">
+        <i [class]="tweet.isLoaded ? 'fa fa-info' : 'fa fa-spinner fa-spin'" aria-hidden="true"></i>
+        <span *ngIf="tweet.isLoaded">
+            {{ tweet.availability | date:'shortDate' }} - {{ tweet.availability | date:'shortTime' }}
+        </span>
+    </div>
+    <div class="col col-12 col-lg-4" [attr.data-title]="'avaialbility' | translate">
+        <button>Add to basket</button>
+    </div>
+</div>

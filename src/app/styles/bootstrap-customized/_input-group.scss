@@ -1,0 +1,22 @@
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+.input-group {
+    &--search {
+        position: relative;
+        .form-control {
+            padding-right: $spacers-xl;
+        }
+        &:before {
+            color: $input-color-placeholder;
+            content: '\f002';
+            font-family: FontAwesome;
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            right: $spacers-md;
+            @include transform(translateY(-50%));
+        }
+    }
+}

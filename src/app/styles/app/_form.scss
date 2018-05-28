@@ -1,0 +1,12 @@
+.form {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    &__header {
+        margin-bottom: $spacers-md;
+    }
+    &__body {
+        position: relative;
+        height: 100%;
+    }
+}

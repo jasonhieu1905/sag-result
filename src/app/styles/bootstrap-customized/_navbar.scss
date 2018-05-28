@@ -1,0 +1,19 @@
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+.navbar-light {
+    .nav-item {
+        .nav-link {
+            &.active {
+                color: $primary;
+                background-color: $gray-50;
+            }
+        }
+    }
+}
+
+.navbar-brand {
+    font-size: $font-size-lg;
+    margin-left: $spacers-lg;
+}

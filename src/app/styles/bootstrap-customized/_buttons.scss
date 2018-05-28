@@ -1,0 +1,17 @@
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+button,
+.btn {
+    &.active.focus,
+    &.active:focus,
+    &.focus,
+    &:active.focus,
+    &:active:focus,
+    &:focus {
+        outline: 0;
+        outline-offset: none;
+        @include box-shadow(none);
+    }
+}

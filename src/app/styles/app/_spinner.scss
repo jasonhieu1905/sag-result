@@ -1,0 +1,42 @@
+@keyframes icon-spin {
+    0% {
+        @include transform(rotate(0deg));
+    }
+    100% {
+        @include transform(rotate(359deg));
+    }
+}
+
+.icon-spin {
+    @include animation(icon-spin 2s infinite linear);
+}
+
+.spinner {
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 996;
+        opacity: 1;
+        background: transparent;
+    }
+    &:after {
+        content: '';
+        background: transparent;
+        border-radius: 100%;
+        border: 6px solid $gray-400;
+        border-top: 6px solid $primary;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        width: $spacers-xl;
+        height: $spacers-xl;
+        z-index: 997;
+        margin-top: -#{$spacers-xl/2};
+        margin-left: -#{$spacers-xl/2};
+        @include animation(icon-spin 1s infinite linear);
+    }
+}

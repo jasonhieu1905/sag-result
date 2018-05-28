@@ -1,0 +1,29 @@
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: map-get($container-max-widths, xl);
+    padding: 0 ($grid-gutter-width / 2);
+    @include flexbox();
+    @include flex(1 0 auto);
+    @include media-breakpoint-down(md) {
+        padding: 0;
+    }
+}
+
+.content {
+    width: 100%;
+    @include flexbox();
+    @include flex(auto);
+    @include flex-direction(row);
+}
+
+.main {
+    background-color: $gray-50;
+    padding: $spacers-md $spacers-xl;
+    @include flexbox();
+    @include flex(auto);
+    @include flex-direction(column);
+    @include media-breakpoint-down(md) {
+        padding: $spacers-md $spacers-lg;
+    }
+}

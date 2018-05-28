@@ -1,0 +1,18 @@
+/**
+ *  Bootstrap Core
+ */
+
+@import '~bootstrap/scss/bootstrap';
+
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+@import 'mixins';
+@import 'buttons';
+@import 'forms';
+@import 'input-group';
+@import 'navbar';
+@import 'pagination';
+@import 'dropdown';
+@import 'grid';

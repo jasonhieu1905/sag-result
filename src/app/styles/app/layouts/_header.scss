@@ -1,0 +1,10 @@
+.header {
+    &__navbar {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        @include media-breakpoint-up(sm) {
+            padding: 0 $spacers-lg;
+        }
+    }
+}

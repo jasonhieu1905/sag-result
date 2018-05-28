@@ -1,0 +1,43 @@
+/**
+*  Bootstrap variables to override bootstrap default variables
+*/
+
+@import '~bootstrap/scss/functions';
+@import '../bootstrap-customized/variables';
+
+/*
+ * Fonts
+ */
+
+$roboto-font-path: '../../assets/fonts/roboto/' !default;
+$fa-font-path: '../../assets/fonts/fontawesome/' !default;
+
+/*
+ * Fonts
+ */
+
+$font-size: 14px !default;
+
+/*
+ * Colors
+ */
+
+$border-color: $gray-100 !default;
+
+/*
+ * Offset spacings variables
+ */
+
+$spacers-xs: map-get($spacers, 1) !default;
+$spacers-sm: map-get($spacers, 2) !default;
+$spacers-md: map-get($spacers, 3) !default;
+$spacers-lg: map-get($spacers, 4) !default;
+$spacers-xl: map-get($spacers, 5) !default;
+
+/*
+ * Sidebar
+ */
+
+$sidebar-width: 160px;
+$sidebar-item-height: 44px;
+$sidebar-logo-max-width: 106px

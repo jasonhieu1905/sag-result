@@ -1,0 +1,35 @@
+/**
+*  App variables
+*/
+
+@import './app/_variables';
+
+/**
+*  Roboto
+*/
+
+@import './app/_roboto';
+
+/**
+*  Font-awesome
+*/
+
+@import '~font-awesome/scss/font-awesome';
+
+/**
+*  Bootstrap Components
+*/
+
+@import './bootstrap-customized/bootstrap';
+
+/**
+ *  App Layouts
+ */
+
+@import './app/resets';
+@import './app/spinner';
+@import './app/form';
+@import './app/table-grid';
+@import './app/layouts/wrapper';
+@import './app/layouts/header';
+@import './app/layouts/footer';

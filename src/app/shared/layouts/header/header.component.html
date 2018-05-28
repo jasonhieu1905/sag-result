@@ -1,0 +1,33 @@
+<header class="header">
+    <div class="container">
+        <nav class="navbar navbar-expand navbar-light mt-3 mb-3">
+            <a class="navbar-brand" [routerLink]="['/']">
+                {{ 'Site Name' | translate }}
+            </a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle btn-link">
+                            {{ currentLanguage.name | translate }}
+                            <span class="caret"></span>
+                        </button>
+                        <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li *ngFor="let language of languages" role="menuitem" (click)="changeLanguage(language)">
+                                <span class="dropdown-item" [ngClass]="{'active': currentLanguage.code === language.code }">
+                                    {{ language.name | translate }}
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="navbar navbar-light navbar-expand header__navbar">
+            <ul class="navbar-nav">
+                <a class="nav-link">
+                    Artikel Liste
+                </a>
+            </ul>
+        </nav>
+    </div>
+</header>

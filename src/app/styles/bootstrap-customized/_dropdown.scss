@@ -1,0 +1,43 @@
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+.dropdown-menu {
+    @include border-radius(0);
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+    }
+    &:before {
+        top: -7px;
+        left: 15px;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid $gray-500;
+        border-left: 7px solid transparent;
+        border-bottom-color: $gray-500;
+    }
+    &:after {
+        top: -6px;
+        left: 16px;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid $white;
+        border-left: 6px solid transparent;
+    }
+}
+
+.dropdown-menu-right {
+    &:before {
+        left: auto;
+        right: 15px;
+    }
+    &:after {
+        left: auto;
+        right: 16px;
+    }
+}
+
+.dropdown-item {
+    cursor: pointer;
+}

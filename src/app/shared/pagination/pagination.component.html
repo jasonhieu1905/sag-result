@@ -1,0 +1,21 @@
+<ng-container *ngIf="totalPages > 1">
+    <nav>
+        <ul class="pagination">
+            <li class="page-item hidden-sm-down" [ngClass]="{ 'disabled' : !hasPrevious() }">
+                <button class="page-link" [disabled]="!hasPrevious()" (click)="goto(current - 1)">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </button>
+            </li>
+            <li class="page-item" *ngFor="let page of pages; trackBy:pageTrackBy" [ngClass]="{ 'active' : page.number === current }">
+                <button class="page-link" (click)="goto(page.number)">
+                    {{ page.number }}
+                </button>
+            </li>
+            <li class="page-item hidden-sm-down" [ngClass]="{ 'disabled' : !hasNext() }">
+                <button class="page-link" [disabled]="!hasNext()" (click)="goto(current + 1)">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</ng-container>

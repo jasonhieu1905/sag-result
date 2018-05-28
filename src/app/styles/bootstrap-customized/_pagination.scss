@@ -1,0 +1,21 @@
+/**
+ *  If you want to override some bootstrap styles, you have to code below.
+ */
+
+.pagination {
+    margin: $spacers-lg -#{($grid-gutter-width / 4)} 0;
+}
+
+.page-item {
+    padding: 0 ($grid-gutter-width / 4);
+    &:first-child {
+        .page-link {
+            @include border-left-radius(0);
+        }
+    }
+    &:last-child {
+        .page-link {
+            @include border-right-radius(0);
+        }
+    }
+}
