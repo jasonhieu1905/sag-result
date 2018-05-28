@@ -2,11 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-A simple project using Angular5 to fetch fake api tweets and display as table.
-Support responsive and multi language
+A simple project using Angular5 focus on loading spinner for general and specific case.
 
 # Demo:
-access this link : https://twitter-hashtag.firebaseapp.com/
+access this link :
 
 ## Development server
 
